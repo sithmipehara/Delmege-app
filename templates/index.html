@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your App Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome for icons -->
+    <style>
+   
+     body {
+        font-family: Arial, sans-serif;
+        color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+        background-image: url("static\\images\\e.jpg");
+        background-color: #1c1c1e; /* Fallback background color */
+        position: relative; /* Required for pseudo-element positioning */
+    }
+
+
+       .button-33:hover {
+            box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,
+                rgba(44,187,99,.25) 0 1px 2px,
+                rgba(44,187,99,.25) 0 2px 4px,
+                rgba(44,187,99,.25) 0 4px 8px,
+                rgba(44,187,99,.25) 0 8px 16px,
+                rgba(44,187,99,.25) 0 16px 32px;
+            transform: scale(1.05) rotate(-1deg);
+       }
+       .header {
+            margin-left: -170px;
+            padding: 20px;
+            #border: 2px solid #dbdbdb;
+            #border-radius: 5px;
+            margin-bottom: 2px;
+            text-align: center; /* Center text horizontally */
+            background-color: rgba(44, 44, 46, 0);
+            background-image: url(""); 
+            background-size: cover; /* Cover the entire header area */
+            background-repeat: no-repeat; /* Prevent the image from repeating */
+            background-position: center; /* Center the image */
+            width: 1090px;
+            height: 180px; /* Set a height for the header */
+            color: black; /* Change text color for better visibility */
+            display: flex; /* Use flexbox for layout */
+            flex-direction: column; /* Stack items vertically */
+            justify-content: center; /* Center content vertically */
+            align-items: center; /* Center content horizontally */
+
+        }
+        .layout {
+            display: flex; /* Use flexbox to align sidebar and container */
+            height: calc(100vh - 80px); /* Full height minus header height */
+        }
+       .container {
+           margin-left: 70px;
+           font-weight: bold;
+           justify-content: center; /* Center horizontally */
+           align-items: center; 
+           display: flex; /* Use flexbox for layout */
+           flex-direction: column; /* Stack items vertically */
+           flex: 1;
+           padding:80px;
+           box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        }
+        .content {
+            max-width: 800px; /* Set maximum width for content */
+            width: 100%; /* Full width within the container */
+        }
+        .panels {            margin-top: 50px;
+            margin-left: -250px;
+            position: relative;
+            display: flex; /* Use flexbox for side-by-side layout */
+            justify-content: space-between; /* Space out panels */
+         }
+         .panel {margin-top: 15px;
+            background-color: rgba(44, 44, 46, 0.6);
+            width: 100%;
+            flex: 1; /* Each panel takes equal space */
+            margin-right: 0px; /* Space between panels */
+            padding: 30px; /* Padding for panels */
+            #background-color: #2c2c2e; /* Light background for panels */
+            border-radius: 5px; /* Rounded corners for panels */
+            #box-shadow: 0 4px 20px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+         }
+         .panel:last-child {
+            margin-right: 0; /* Remove right margin from the last panel */
+        }
+        .form-group {
+            display: flex; /* Use flexbox for alignment */
+            align-items: center; /* Center items vertically */
+            margin-bottom: 20px; /* Space between form groups */
+        }
+        .form-group label {
+            width: 350px;
+            margin-right: 10px; /* Space between label and input */
+            white-space: nowrap;
+            flex: 1; /* Take up equal space */
+            font-size: 16px; /* Adjust font size */
+            color: #f2f2f2; /* Label color for visibility */
+        }
+        .form-group input[type="range"] {
+            flex: 1; /* Take up more space than the label */
+            margin-left: 10px; /* Space between label and input */
+           -webkit-appearance: none; /* Remove default styling */
+            height: 5px; /* Height of the track */
+            background: #e0e0e0; /* Background color for track */
+            border-radius: 5px; /* Rounded corners */
+         }
+         .form-group input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none; /* Remove default styling */
+            width: 20px; /* Width of the thumb */
+            height: 20px; /* Height of the thumb */
+            border-radius: 50%; /* Make it circular */
+            background:#C00000; /* Set your desired color here */
+            cursor: pointer; /* Pointer cursor on hover */
+         }
+        .form-group input[type="range"]::-ms-thumb {
+            width: 20px; /* Width of the thumb in Edge */
+            height: 20px; /* Height of the thumb in Edge */
+            border-radius: 50%; /* Make it circular */
+            background: #C00000; /* Set your desired color here */
+            cursor: pointer; /* Pointer cursor on hover */
+         }
+         .form-group input[type="text"] {
+            flex: 1; /* Take up more space than the label */
+            margin-left: 10px; /* Space between label and text input */
+            padding: 10px; /* Padding for better touch targets */
+            border-radius: 5px; /* Rounded corners */
+            border: 1px solid #ccc; /* Border for text input */
+            background-color: #2c2c2e; /* Dark background color for input */
+            color: #f0f0f0; /* Light text color for better visibility */
+         }
+
+         .form-group input[type="text"]:focus {
+            
+            outline: none; /* Remove default outline */
+         }
+         /* Hide default spinner arrows in Webkit browsers */
+         .form-group input[type="number"]::-webkit-inner-spin-button,
+         .form-group input[type="number"]::-webkit-outer-spin-button {
+           -webkit-appearance: none; /* Hide default spin buttons in WebKit browsers */
+           margin: 0; /* Remove margin */
+         }
+         /* Style the number input for Firefox */
+         .form-group input[type="number"] {
+           -moz-appearance: textfield; /* Hide default spinner arrows in Firefox */
+         }
+         .form-group {
+            position: relative; /* Positioning context for arrows */
+         }
+         .form-group input[type="number"] {margin: 0;
+            flex: 1; /* Take up more space than the label */
+            margin-left: 10px; /* Space between label and text input */
+            padding: 10px; /* Padding for better touch targets */
+            border-radius: 5px; /* Rounded corners */
+            border: 1px solid #ccc; /* Border for text input */
+            background-color: #2c2c2e; /* Dark background color for input */
+            color: #f0f0f0; /* Light text color for better visibility */
+         }
+         input:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0 30px #2c2c2e inset !important; /* Your background color */
+            box-shadow: 0 0 0 30px #2c2c2e inset !important; /* Your background color */
+           -webkit-text-fill-color: white !important; /* Your text color */
+         }
+         .form-group select {           
+            flex: 1; /* Take up more space than the label */
+            margin-left: 10px; /* Space between label and select */
+            padding: 10px; /* Padding for better touch targets */
+            border-radius: 5px; /* Rounded corners */
+            border: 1px solid #ccc; /* Border for select box */
+            background-color: #2c2c2e; /* Match background color */
+            color: #f0f0f0; /* Text color for select box */
+         }
+         select:-webkit-autofill {
+           -webkit-text-fill-color: #f0f0f0 !important; /* Your text color */
+            -webkit-box-shadow: 0 0 0 30px #2c2c2e inset !important; /* Your background color */
+            box-shadow: 0 0 0 30px #2c2c2e inset !important;
+         }
+          select:focus {
+             outline: none; /* Remove default outline */
+             border-color: #39604e; /* Change border color on focus */
+          }
+          select option {
+             background-color: #2c2c2e; /* Background color for options */
+             color: #f0f0f0; /* Text color for options */
+          }
+         .submit-container {
+            margin-left: -1165px;
+            display: flex;
+            justify-content: center; /* Center the button horizontally */
+            margin-top: 500px; /* Space above the button */
+            margin-bottom: 30px;
+         }
+         .submit-button {
+            font-weight: bold;
+            width: 1080px;
+            text-align: center; /* Center text */
+            text-decoration: none; /* No underline */
+            display: inline-block; /* Inline block for layout */
+            font-size: 20px; /* Font size */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s ease; /* Smooth transition */
+            align-self: flex-end; /* Align button to the left (start of flex container) */
+            color: #fff;
+            padding: 15px 25px;
+            background-color:#39604e;
+            background-image: radial-gradient(93% 87% at 87% 89%, 
+               rgba(0, 0, 0, 0.23) 0%, transparent 86.18%), radial-gradient(66% 66% at 26% 20%, 
+               rgba(255, 255, 255, 0.55) 0%, 
+               rgba(255, 255, 255, 0) 69.79%, 
+               rgba(255, 255, 255, 0) 100%);
+            box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.25), 
+               inset 0px 3px 9px rgba(255, 255, 255, 0.3), 
+               inset 0px 1px 1px rgba(255, 255, 255, 0.6), 
+               inset 0px -8px 36px rgba(0, 0, 0, 0.3), 
+               inset 0px 1px 5px rgba(255, 255, 255, 0.6), 2px 19px 31px rgba(0, 0, 0, 0.2);
+            border-radius: 50px;
+             border-color: white;
+            user-select: none;
+            -webkit-user-select: none;
+          }
+          .submit-button:hover {
+             border-color: white;
+             color: white;
+            background-color:#a82424;
+            box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.25), 
+               inset 0px 3px 9px rgba(255, 255, 255, 0.3), 
+               inset 0px 1px 1px rgba(255, 255, 255, 0.6), 
+               inset 0px -8px 36px rgba(0, 0, 0, 0.3), 
+               inset 0px 1px 5px rgba(255, 255, 255, 0.6), 2px 19px 31px rgba(0, 0, 0, 0.2);
+          }
+        .weight-container {
+            display: flex;
+            align-items: center;
+        }
+        .weight-value {
+            margin-right: 10px;
+        }
+* {
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+</style>
+</head>
+
+<body>
+
+
+
+<div class="container">
+ <div class="content">
+   <div class="header"><br><br><br>
+            <img src="static\images\del.png" width=180 height=180 ><br><br>
+            <h1 style="font-family: 'Roboto', sans-serif; font-size: 41px; font-weight: bold;color: white;margin:-20px;">Delmege FMCG Demand Predictor</h1><br>
+            <h1 style="font-family: 'Roboto', sans-serif; font-size: 25px; font-weight: bold;background: linear-gradient(to right, #ff3131, #ff3131,#ff3131,#ff3131); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"> <i>Anticipate Tomorrow's Demand, Optimize Today's Supply</i></h1>
+            <p></p>
+    </div>
+
+<br>
+
+
+      <form action="/submit" method="POST" id="form">
+        <div class="panels">
+          <div class="panel">
+        
+
+         <div class="form-group">
+            <label for="year">Year</label>
+            <select id="year" name="Year" required>
+                
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+            </select><br><br>
+         </div>
+
+         <div class="form-group">
+            <label for="month">Month</label>
+            <select id="month" name="Month" required>
+                
+                <option value="1">January</option>
+                <option value="2">February</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+                <option value="6">June</option>
+                <option value="7">July</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+
+            </select><br><br>
+         </div>
+
+        <!-- Brand Dropdown -->
+            <div class="form-group">
+                <label for="brand">Product Brand</label>
+                <select id="brand" name="Product Brand" required onchange="updateOptions()">
+                    <!-- Default selected value is Motha -->
+                    <option value="motha" selected>Motha</option>
+                    <option value="kelloggs">Kellogg's</option>
+                    <option value="delmege">Delmege</option>
+                    <option value="pakmaya">Pakmaya</option>
+                </select><br><br>
+            </div>
+
+            <!-- Sub-Brand Dropdown -->
+            <div class="form-group">
+                <label for="sub_brand">Sub Brand</label>
+                <select id="sub_brand" name="Sub Brand" required>
+                    <!-- Default values will be populated dynamically -->
+                </select><br><br>
+            </div>
+
+            <!-- Product Category Dropdown -->
+            <div class="form-group">
+                <label for="product_category">Product Category</label>
+                <select id="product_category" name="Product Category" required onchange="updateCategoryOptions()">
+                    <!-- Default values will be populated dynamically -->
+                </select><br><br>
+            </div>
+
+        <div class="form-group">
+            <label for="channel">Channel</label>
+            <select id="channel" name="Channel" required>
+                <option value="GT">General Trade</option>
+                <option value="MT">Modern Trade</option>
+                <option value="HO">HoReCa</option>
+                <option value="EX">Export</option>
+                <option value="BK">Bakery</option>
+                <option value="WH">Wholesale</option>
+                <option value="OT">Other</option>               
+
+            </select><br><br>
+        </div>
+
+        <!-- Flavor Dropdown -->
+            <div class="form-group">
+                <label for="flavor">Flavor</label>
+                <select id="flavor" name="Flavor">
+                    <!-- Default values will be populated dynamically -->
+                </select><br><br>
+            </div>
+
+
+          </div>
+
+
+          <!-- Second panel -->
+          <div class="panel">        
+
+
+          <!-- Variety Dropdown -->
+            <div class="form-group">
+                <label for="variety">Variety</label>
+                <select id="variety" name="Variety">
+                    <!-- Default values will be populated dynamically -->
+                </select><br><br>
+            </div>
+
+            <!-- Color Dropdown -->
+            <div class="form-group">
+                <label for="color">Color</label>
+                <select id="color" name="Color">
+                    <!-- Default values will be populated dynamically -->
+                </select><br><br>
+            </div>
+
+          <div class="form-group">
+           <label for="free_issues">Has Free Issues</label>
+            <select id="free_issues" name="Has Free Issues" required>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+
+            </select><br><br>
+        </div>
+
+
+         <div class="form-group">
+            <label for="unit_price">Unit Price (Rs.)</label>
+            <input type="number" name="unit_price" id="unit_price"            value="0" min="0" required>
+         </div>
+
+          <div class="form-group">
+            <label for="discount">Discount (%)</label>
+            <input type="range" id="discountSlider" name="discount" min="0" max="100" value="0" step="1" oninput="updateDiscountValue(this.value)">
+    <span class="slider-value" id="discountValue">0%</span>
+         </div>
+
+
+         <div class="form-group">
+            <label for="outlet_reach">Outlet Reach</label>
+            <input type="number" name="outlet_reach" id="outlet_reach"            value="1" min="1" required>
+         </div>
+
+         <div class="form-group">
+                        <label for="weight">Weight</label>
+                        <input type="number" name="weight" id="Weight" value="1" min="1" required>
+                        <select id="weight_unit" name="weight_unit">
+                            <option value="kg">kg</option>
+                            <option value="g">g</option>
+                        </select>
+                    </div>
+
+
+<button type="button" style="
+        width: 50px;
+        height: 50px;
+        border-radius: 10px; /* Make it square */
+        background-color: #ffbf80; /* Green background */
+        color: black;
+        font-size: 30px;
+        line-height: 1; /* Center the plus sign vertically */
+        text-align: center;
+        position: relative;
+        top: -5px; /* Adjust position as needed */
+        left: 570px; /* Adjust position as needed */
+        border-color: black;
+        cursor: pointer;
+        box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.25), 
+               inset 0px 3px 9px rgba(255, 255, 255, 0.3), 
+               inset 0px 1px 1px rgba(255, 255, 255, 0.6), 
+               inset 0px -8px 36px rgba(0, 0, 0, 0.3), 
+               inset 0px 1px 5px rgba(255, 255, 255, 0.6), 2px 19px 31px rgba(0, 0, 0, 0.2);
+    ">+</button>
+
+
+   </div>
+
+         <!--  Submit button -->
+         <div class="submit-container">
+              <button type="submit" class="submit-button">Submit</button> 
+         </div>
+
+<!-- Add this hidden input to store the predictions -->
+<input type="hidden" id="predictions" name="predictions" value="[]">
+
+  </form>
+
+ 
+
+
+<script>
+            function updateDiscountValue(value) {
+                document.getElementById('discountValue').innerText = value + '%';
+            }
+
+            const brandData = {
+                motha: {
+                    subBrand: ["Motha"],
+                    productCategories: [
+                        { name: "Original Jelly", flavors: ["Apple", "Strawberry", "Mixed Fruit", "Woodapple", "Blackcurrent", "Lemon", "Lime", "Green Gage", "Orange", "Rambutan", "Mango", "Blueberry", "Raspberry", "Promo"], colors: [], varieties: [] },
+                        { name: "Moss Jelly", flavors: ["Strawberry", "Apple", "Mixed Fruit", "Blackcurrent", "Assorted"], colors: [], varieties: [] },
+                        { name: "Diet Jelly", flavors: ["Blackcurrent", "Lime", "Orange", "Strawberry", "Lemon", "Green Gage"], colors: [], varieties: [] },
+                        { name: "Custard Powder", flavors: ["Vanilla", "Strawberry", "Banana"], colors: [], varieties: [] },
+                        { name: "Coloring", colors: ["Red", "Pink", "Yellow", "Green", "Lemon Yellow", "Chocolate Brown"], flavors: [], varieties: [] },
+                        { name: "Essence", flavors: ["Almond", "Banana", "Pineapple", "Vanilla", "Chocolate", "Rose"], colors: [], varieties: [] },
+                    ]
+                },
+                kelloggs: {
+                    subBrand: ["Kellogg's"],
+                    productCategories: [
+                        { name: "Chocos", varieties: ["Moons & Stars", "Duet", "Variety Pack"] },
+                        { name: "Allbran", flavors: ["Wheat Flakes"] },
+                        { name: "Granola", flavors: ["Almond & Cranberry", "Chocolate & Almond", "Honey, Almond, Strawberry & Pumpkin Seeds"] },
+                        { name: "Muesli", flavors: ["Fruit & Nut", "Nuts Delight", "Fruit Magic", "Millet"] },
+                        { name: "Oats", varieties: ["Rolled Oats", "Jar Pack"] }
+                    ]
+                },
+                delmege: {
+                    subBrand: {
+                        "tea": ["Hiru Kahata", "Breeze"],
+                        "pasta": ["Delizia", "Delmege"],
+                        "default": ["Delmege"] // Default sub-brand for other categories
+                    },
+                    productCategories: [
+                        { name: "Soya", flavors: ["Chicken", "Roast Chicken", "Mixed Vegetables", "Cuttle Fish", "Prawns", "Curry", "Jaffna Curry", "Mutton", "Plain", "Promo", "Tikiri"] },
+                        { name: "Tea" },
+                        { name: "Pasta", subBrands: ["Delizia", "Delmege"], varieties: ["Elbow Large", "Elbow Small", "Fusili", "Penne", "Shell Large", "Shell Small", "Rigatino"] },
+                        { name: "Noodles", varieties: ["Dry"] },
+                        { name: "Essence", flavors: ["Rose", "Butterscotch", "Strawberry", "Vanilla", "Banana", "Almond", "Pineapple", "Coffee", "Butter", "Chocolate", "Milk", "Orange"] },
+                        { name: "Coloring", colors: ["Blue", "Brown", "Red", "Green", "Pink", "Egg Yellow"] },
+                        { name: "Canned Fish", varieties: ["Mackeral", "Jack Mackeral"] }
+                    ]
+                },
+                pakmaya: {
+                    subBrand: ["Pakmaya"],
+                    productCategories: [
+                        { name: "Yeast", varieties: ["High Sugar", "Low Sugar"] }
+                    ]
+                }
+            };
+
+            function updateOptions() {
+                const brand = document.getElementById("brand").value;
+                const subBrandSelect = document.getElementById("sub_brand");
+                const categorySelect = document.getElementById("product_category");
+
+                // Clear previous options
+                subBrandSelect.innerHTML = "";
+                categorySelect.innerHTML = "";
+
+                // Update sub-brand
+                let subBrands;
+                if (brand === "delmege") {
+                    // Use "tea" as the default category when the page loads
+                    const defaultCategory = "tea";
+                    subBrands = brandData[brand].subBrand[defaultCategory];
+                } else {
+                    subBrands = brandData[brand].subBrand;
+                }
+
+                subBrands.forEach(sub => {
+                    const option = document.createElement("option");
+                    option.value = sub.toLowerCase();
+                    option.textContent = sub.charAt(0).toUpperCase() + sub.slice(1);
+                    subBrandSelect.appendChild(option);
+                });
+
+                // Update product categories
+                brandData[brand].productCategories.forEach(category => {
+                    const option = document.createElement("option");
+                    option.value = category.name.toLowerCase();
+                    option.textContent = category.name.charAt(0).toUpperCase() + category.name.slice(1);
+                    categorySelect.appendChild(option);
+                });
+
+                // Trigger updateCategoryOptions to set defaults based on category
+                updateCategoryOptions();
+            }
+
+            function updateCategoryOptions() {
+                const brand = document.getElementById("brand").value;
+                const categoryName = document.getElementById("product_category").value;
+                const selectedCategory = brandData[brand].productCategories.find(cat => cat.name && cat.name.toLowerCase() === categoryName);
+
+                const flavorSelect = document.getElementById("flavor");
+                const varietySelect = document.getElementById("variety");
+                const colorSelect = document.getElementById("color");
+                const subBrandSelect = document.getElementById("sub_brand");
+
+                // Clear previous options
+                flavorSelect.innerHTML = "";
+                varietySelect.innerHTML = "";
+                colorSelect.innerHTML = "";
+
+                // Add "None" option
+                const noneFlavorOption = document.createElement("option");
+                noneFlavorOption.value = "none";
+                noneFlavorOption.textContent = "None";
+                flavorSelect.appendChild(noneFlavorOption);
+
+                const noneVarietyOption = document.createElement("option");
+                noneVarietyOption.value = "none";
+                noneVarietyOption.textContent = "None";
+                varietySelect.appendChild(noneVarietyOption);
+
+                const noneColorOption = document.createElement("option");
+                noneColorOption.value = "none";
+                noneColorOption.textContent = "None";
+                colorSelect.appendChild(noneColorOption);
+
+                // Update sub-brand based on the selected category for Delmege
+                if (brand === "delmege") {
+                    subBrandSelect.innerHTML = ""; // Clear previous options
+                    let subBrands;
+
+                    if (brandData[brand].subBrand[categoryName]) {
+                        // If there are specific sub-brands for the category, use them
+                        subBrands = brandData[brand].subBrand[categoryName];
+                    } else {
+                        // Otherwise, use the default "Delmege"
+                        subBrands = brandData[brand].subBrand["default"];
+                    }
+
+                    subBrands.forEach(sub => {
+                        const option = document.createElement("option");
+                        option.value = sub.toLowerCase();
+                        option.textContent = sub.charAt(0).toUpperCase() + sub.slice(1);
+                        subBrandSelect.appendChild(option);
+                    });
+                }
+
+                if (selectedCategory) {
+                    if (selectedCategory.flavors) {
+                        selectedCategory.flavors.forEach(flavor => {
+                            const option = document.createElement("option");
+                            option.value = flavor.toLowerCase();
+                            option.textContent = flavor.charAt(0).toUpperCase() + flavor.slice(1);
+                            flavorSelect.appendChild(option);
+                        });
+                    }
+
+                    if (selectedCategory.varieties) {
+                        selectedCategory.varieties.forEach(variety => {
+                            const option = document.createElement("option");
+                            option.value = variety.toLowerCase();
+                            option.textContent = variety.charAt(0).toUpperCase() + variety.slice(1);
+                            varietySelect.appendChild(option);
+                        });
+                    }
+
+                    if (selectedCategory.colors) {
+                        selectedCategory.colors.forEach(color => {
+                            const option = document.createElement("option");
+                            option.value = color.toLowerCase();
+                            option.textContent = color.charAt(0).toUpperCase() + color.slice(1);
+                            colorSelect.appendChild(option);
+                        });
+                    }
+                }
+
+
+            }
+
+            // Initial setup to populate the Sub Brand and Product Category
+            updateOptions();
+        </script>
+         <script>
+            const productCategoryDropdown = document.getElementById('product_category');
+            const weightUnitDropdown = document.getElementById('weight_unit');
+
+            function updateWeightUnits() {
+                const category = productCategoryDropdown.value;
+                weightUnitDropdown.innerHTML = ''; // Clear existing options
+                let units;
+
+                if (category === 'coloring' || category === 'essence') {
+                    units = ['ml', 'l'];
+                } else if (category === 'tea') {
+                    units =['kg', 'g', 'bags'] ;
+                } else {
+                    units = ['kg', 'g'];
+                }
+
+                units.forEach(unit => {
+                    const option = document.createElement('option');
+                    option.value = unit;
+                    option.textContent = unit;
+                    weightUnitDropdown.appendChild(option);
+                });
+            }
+
+            // Add an event listener to the product category dropdown
+            productCategoryDropdown.addEventListener('change', updateWeightUnits);
+
+            // Initialize weight units on page load
+            updateWeightUnits();
+
+document.addEventListener('DOMContentLoaded', function () {
+    const addButton = document.querySelector('button[type="button"]');
+    const submitButton = document.querySelector('button[type="submit"]');
+    const form = document.getElementById('form');
+    const predictionsInput = document.getElementById('predictions');
+    let predictions = [];
+
+    // Function to send form data for prediction
+    async function getPrediction(formData) {
+        const data = {};
+        formData.forEach((value, key) => {
+            data[key] = value;
+        });
+
+        const response = await fetch('/predict', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        });
+
+        return await response.json();
+    }
+
+    // Function to add a product to the predictions list
+    async function addProduct() {
+        const formData = new FormData(form);
+        const result = await getPrediction(formData);
+
+        if (result.error) {
+            alert(`Error: ${result.error}`);
+            return;
+        }
+
+        // Store the prediction
+        predictions.push({
+            predicted_qty: result.predicted_qty,
+            total_sales_price: result.total_sales_price,
+        });
+
+        // Update the hidden input with the new predictions
+        predictionsInput.value = JSON.stringify(predictions);
+
+        // Show a pop-up message
+        alert('Product added! You can add another product or submit the form to see the total predictions.');
+    }
+
+    // Handle "Add" button click
+    addButton.addEventListener('click', async function () {
+        await addProduct();
+    });
+
+    // Handle "Submit" button click
+    submitButton.addEventListener('click', async function (event) {
+        event.preventDefault(); // Prevent default form submission
+
+        // Add the current product to the predictions list if it hasn't been added yet
+        const formData = new FormData(form);
+        const currentProduct = JSON.stringify(Object.fromEntries(formData));
+        const isProductAlreadyAdded = predictions.some(p => JSON.stringify(p) === currentProduct);
+
+        if (!isProductAlreadyAdded) {
+            await addProduct();
+        }
+
+        // Submit the form programmatically
+        form.submit();
+    });
+});
+
+</script>
+</body>
+</html>
